@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>bank</artifactId>
+    <artifactId>ajopay</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bank</name>
-    <description>bank</description>
+    <name>ajopay</name>
+    <description>ajopay</description>
     <url/>
     <licenses>
         <license/>
@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>22</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
@@ -42,7 +42,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
@@ -68,13 +67,10 @@
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
-                            <dependency>
-                                <groupId>org.projectlombok</groupId>
-                                <artifactId>lombok</artifactId>
-                                <version>1.18.20</version>
-                                <scope>provided</scope>
-                            </dependency>
-
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.20</version>
+                            <scope>provided</scope>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>
@@ -85,7 +81,7 @@
                 <configuration>
                     <excludes>
                         <exclude>
-                            <groupId>org.project-lombok</groupId>
+                            <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                         </exclude>
                     </excludes>
@@ -93,5 +89,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

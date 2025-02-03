@@ -1,23 +1,28 @@
 package com.example.bank.dto.response;
 
 public class ResponseDto {
-    private String firstName;  // example field, adjust to your case
+    private String firstName; // example field, adjust to your case
+    private String accountNumber;
 
-    // No-argument constructor
-    public ResponseDto() {
-    }
-
-    // Constructor that accepts a String
     public ResponseDto(String firstName) {
         this.firstName = firstName;
+        this.accountNumber = accountNumber;
     }
+// No-argument constructor
 
-    // Getter and setter for firstName
     public String getFirstName() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 }

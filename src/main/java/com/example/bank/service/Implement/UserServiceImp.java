@@ -16,6 +16,7 @@ public class UserServiceImp  implements UserService {
 
     public ResponseDto SignUp(RequestDto requestDto){
         User user = new User();
+        user.setAccountNumber(requestDto.getAccountNumber());
         user.setFirstName(requestDto.getFirstName());
         user.setSurname(requestDto.getSurname());
         user.setEmailAddress(requestDto.getEmailAddress());
@@ -28,5 +29,7 @@ public class UserServiceImp  implements UserService {
         User createdUser = userRepository.save(user);
 
         return new ResponseDto( createdUser.getFirstName());
+
+
     }
 }

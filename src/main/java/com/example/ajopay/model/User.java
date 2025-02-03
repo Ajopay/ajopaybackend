@@ -1,22 +1,33 @@
-package com.example.bank.dto.request;
+package com.example.ajopay.model;
 
-public class RequestDto {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String accountNumber;
     private String firstName;
     private String surname;
     private String emailAddress;
     private String phoneNumber;
-    private String accountNumber;
     private String referralCode;
     private String supportCode;
     private String password;
     private String confirmPassword;
 
     // No-argument constructor
-    public RequestDto() {}
+    public User() {}
 
     // All-argument constructor
-    public RequestDto(String firstName, String surname, String emailAddress, String phoneNumber,
-                      String referralCode, String supportCode, String password, String confirmPassword, String accountNumber) {
+    public User(Long id, String firstName, String surname, String emailAddress, String phoneNumber,
+                String referralCode, String supportCode, String password, String confirmPassword, String accountNumber) {
+        this.id = id;
+        this.accountNumber = accountNumber;
         this.firstName = firstName;
         this.surname = surname;
         this.emailAddress = emailAddress;
@@ -25,10 +36,13 @@ public class RequestDto {
         this.supportCode = supportCode;
         this.password = password;
         this.confirmPassword = confirmPassword;
-        this.accountNumber = accountNumber;
     }
 
     // Getters
+    public Long getId() {
+        return id;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -66,6 +80,10 @@ public class RequestDto {
     }
 
     // Setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -82,10 +100,6 @@ public class RequestDto {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
     public void setReferralCode(String referralCode) {
         this.referralCode = referralCode;
     }
@@ -100,5 +114,9 @@ public class RequestDto {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 }

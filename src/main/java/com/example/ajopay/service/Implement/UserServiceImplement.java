@@ -2,7 +2,7 @@ package com.example.ajopay.service.Implement;
 
 import com.example.ajopay.dto.Reponse.Response;
 import com.example.ajopay.dto.RequestDto.Request;
-import com.example.ajopay.model.Users;
+import com.example.ajopay.model.User;
 import com.example.ajopay.repository.UserRepository;
 import com.example.ajopay.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,19 +16,24 @@ public class UserServiceImplement implements UserService {
     @Override
     public Response Signup(Request request) {
         // Correctly instantiate the user object using the constructor
-        Users user = new Users(
+        User user = new User(
                 request.getFirstName(),
+                request.getAccountNumber()
                 request.getLastName(),
                 request.getEmail(),
                 request.getPhoneNumber(),
                 request.getPassword(),
                 request.getConfirmpassword()
+
         );
 
 
-        Users createdUser = repository.save(user);
+        User createdUser = repository.save(user);
 
 
         return new Response(createdUser.getFirstName());
+
+
+
     }
 }

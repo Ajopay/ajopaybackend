@@ -7,6 +7,7 @@ public class Request {
     private String phoneNumber;
     private String password;
     private String confirmpassword;
+    private String accountNumber;
 
     // Getter and setter for firstName
     public String getFirstName() {
@@ -25,6 +26,11 @@ public class Request {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    //Getter and Setter for AccountNo
+    public String getAccountNumber(){return accountNumber;}
+
+    public void setAccountNumber(String accountNumber){this.accountNumber = accountNumber;}
 
     // Getter and setter for email
     public String getEmail() {
@@ -58,17 +64,20 @@ public class Request {
         return confirmpassword;
     }
 
+
     public void setConfirmpassword(String confirmpassword) {
         this.confirmpassword = confirmpassword;
     }
 
 
-    public Request(String firstName, String lastName, String email, String phoneNumber, String password, String confirmpassword) {
+
+    public Request(String firstName, String lastName, String email, String phoneNumber, String password, String confirmpassword, String accountNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.confirmpassword = confirmpassword;
+        this.accountNumber = accountNumber;
     }
 }

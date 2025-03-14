@@ -2,13 +2,26 @@ package com.example.ajopay.dto.RequestDto;
 
 public class Request {
     private String firstName;
+    private String accountNumber;
     private String lastName;
     private String email;
     private String phoneNumber;
     private String password;
     private String confirmpassword;
 
-    // Getter and setter for firstName
+    public Request() {
+    }
+
+    public Request(String firstName, String accountNumber, String lastName, String email, String phoneNumber, String password, String confirmpassword) {
+        this.firstName = firstName;
+        this.accountNumber = accountNumber;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.password = password;
+        this.confirmpassword = confirmpassword;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -17,7 +30,14 @@ public class Request {
         this.firstName = firstName;
     }
 
-    // Getter and setter for lastName
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
     public String getLastName() {
         return lastName;
     }
@@ -26,7 +46,6 @@ public class Request {
         this.lastName = lastName;
     }
 
-    // Getter and setter for email
     public String getEmail() {
         return email;
     }
@@ -35,7 +54,6 @@ public class Request {
         this.email = email;
     }
 
-    // Getter and setter for phoneNumber
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -44,7 +62,6 @@ public class Request {
         this.phoneNumber = phoneNumber;
     }
 
-    // Getter and setter for password
     public String getPassword() {
         return password;
     }
@@ -53,22 +70,11 @@ public class Request {
         this.password = password;
     }
 
-    // Getter and setter for confirmpassword
     public String getConfirmpassword() {
         return confirmpassword;
     }
 
     public void setConfirmpassword(String confirmpassword) {
-        this.confirmpassword = confirmpassword;
-    }
-
-
-    public Request(String firstName, String lastName, String email, String phoneNumber, String password, String confirmpassword) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
         this.confirmpassword = confirmpassword;
     }
 }
